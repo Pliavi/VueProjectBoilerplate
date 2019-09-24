@@ -18,7 +18,7 @@ const router = new Router({
     {
       path: "/logout",
       name: "logout",
-      component: () => import("./views/Logout.js"),
+      component: () => import("./views/Logout.vue"),
       beforeEnter: requireAuth
     },
     {
