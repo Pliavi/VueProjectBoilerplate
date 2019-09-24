@@ -1,21 +1,23 @@
 <template>
   <div class="dashboard">
     <h1>This is an dashboard page</h1>
-    {{ users }}
+    <div>
+      <b>UserToken:</b>
+      {{ token }}
+    </div>
+    <v-btn type="text" to="/logout">Logout</v-btn>
   </div>
 </template>
 
 <script>
-import UserRepository from "@/api/UserRepository";
-
 export default {
   data() {
     return {
-      users: []
+      token: null
     };
   },
-  async mounted() {
-    this.users = await UserRepository.get();
+  mounted() {
+    this.token = localStorage.getItem("access_token");
   }
 };
 </script>
