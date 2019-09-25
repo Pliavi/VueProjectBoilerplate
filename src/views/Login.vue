@@ -41,6 +41,7 @@ export default {
       this.loading = true;
       try {
         const { token } = await UserRepository.login(this.user, this.pass);
+
         localStorage.setItem("access_token", token);
         this.$router.push("/dashboard");
       } catch (error) {

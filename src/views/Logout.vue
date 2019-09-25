@@ -5,7 +5,7 @@
 <script>
 export default {
   created() {
-    this.$store.commit("clearUserData", { module: "user" });
+    localStorage.removeItem("access_token");
     this.$router.push("/");
   }
 };
